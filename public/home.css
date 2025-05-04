@@ -1,0 +1,95 @@
+body {
+    background: #111;
+    color: #ddd;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  
+  .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .main {
+    flex: 3;
+  }
+  
+  .sidebar {
+    flex: 1;
+    border-left: 1px solid #333;
+    padding-left: 1rem;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 1rem;
+    border-radius: 4px;
+    filter: grayscale(100%);
+  }
+  
+  .intro {
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  ul {
+    list-style: "- ";
+    padding-left: 1rem;
+  }
+  
+  .projects ul {
+    padding-left: 1rem;
+  }
+  
+  .projects h2,
+  .status h2,
+  .nav h2,
+  .buttons h2 {
+    margin-top: 1.5rem;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .button-img {
+    width: 120px;
+    margin-top: 0.5rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  
+    .profile-img {
+      float: none;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+  
+    .sidebar {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+  
