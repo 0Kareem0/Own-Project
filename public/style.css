@@ -1,85 +1,68 @@
+/* Reset some defaults */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background: #121212;
-    color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for the form */
+.container {
+  background-color: #1f1f1f;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form inputs */
+form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+form input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Button styling */
+form button {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #00d4ff, #0077ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, #0077ff, #00d4ff);
+}
+
+/* Responsive spacing */
+@media (max-width: 480px) {
   .container {
-    background: #1e1e1e;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 400px;
+    margin: 1rem;
+    padding: 1.5rem;
   }
-  
-  .register-form h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-  }
-  
-  .register-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #cccccc;
-  }
-  
-  .register-form input {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    background: #2c2c2c;
-    color: #f0f0f0;
-    border: 1px solid #444;
-    border-radius: 5px;
-  }
-  
-  .register-form input:focus {
-    border-color: #00bcd4;
-    outline: none;
-  }
-  
-  .register-form button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #00bcd4;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .register-form button:hover {
-    background-color: #0097a7;
-  }
-  
-  .login-link {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaaaaa;
-  }
-  
-  .login-link a {
-    color: #00bcd4;
-    text-decoration: none;
-  }
-  
-  .login-link a:hover {
-    text-decoration: underline;
-  }
-  
+}

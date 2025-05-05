@@ -1,33 +1,21 @@
+// server.js
 const express = require('express');
-const app = express();
+const connectDB = require('./db');
 const path = require('path');
-const port = 3000
-//Middleware
-app.disable('etag')
-app.disable('x-powered-by')
-app.use(express.static('./public'))
+require('dotenv').config();
 
-//middleware
-app.use(express.urlencoded({ extended: false }))
+const app = express();
+connectDB();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // (optional) for JSON requests
 
-//Routes
-// app.use(`/`,)
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/',(req,res)=>{
-    res.status(200).send('Hello World!')
-})
+// ✅ Make sure the path is correct
+app.use('/auth', require('./src/routes/auth'));
+app.use('/profile', require('./src/routes/profile'));
+// app.use('/todo', require('./src/routes/todo'));
 
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  });
-  
-  app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'home.html'));
-  });
-
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
- 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
