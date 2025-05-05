@@ -15,7 +15,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ✅ Make sure the path is correct
 app.use('/auth', require('./src/routes/auth'));
 app.use('/profile', require('./src/routes/profile'));
-app.use('/todo', require('./src/routes/todo'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
