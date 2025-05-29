@@ -16,5 +16,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', require('./src/routes/auth'));
 app.use('/profile', require('./src/routes/profile'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

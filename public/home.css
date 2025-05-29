@@ -12,6 +12,39 @@ body {
     text-decoration: none;
   }
   
+  .music-controls {
+    margin: 1rem 0;
+}
+
+.music-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* dark background */
+    color: white;
+    border: none;
+    border-radius: 50%; /* makes it circular */
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.music-btn:hover {
+    background-color: #333;
+}
+
+.play-icon, .pause-icon {
+    font-size: 1.2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
   .wrapper {
     max-width: 1000px;
     margin: 0 auto;
@@ -93,3 +126,10 @@ body {
     }
   }
   
+  footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #e0e0e03d;
+    color: #7f8c8d;
+}
