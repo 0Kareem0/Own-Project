@@ -1,10 +1,29 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --header-bg: #2c3e50;
+  --header-text: #fff;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg-color: #111;
+  --text-color: #ddd;
+  --header-bg: #1a1a1a;
+  --header-text: #fff;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
-    background: #111;
-    color: #ddd;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
     font-size: 15px;
+    overflow: hidden;
   }
   
   a {
@@ -12,8 +31,35 @@ body {
     text-decoration: none;
   }
   
-  .music-controls {
-    margin: 1rem 0;
+  .theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-controls {
+  position: fixed;
+  top: 20px;
+  right: 70px;
+  z-index: 1000;
+}
+
+.theme-toggle:hover,
+.music-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
 }
 
 .music-btn {
@@ -49,6 +95,11 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
+  }
+  
+  .header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
   }
   
   .header h1 {
@@ -133,3 +184,16 @@ body {
     border-top: 1px solid #e0e0e03d;
     color: #7f8c8d;
 }
+
+.counter-container {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#counter {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+

@@ -80,16 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonState();
     });
 
-    // Optional: Toggle play/pause with spacebar
-    document.addEventListener('keydown', (e) => {
-        if (document.activeElement.tagName !== 'INPUT' && 
-            document.activeElement.tagName !== 'TEXTAREA') {
-            if (e.code === 'Space') {
-                e.preventDefault();
-                togglePlay();
-            }
-        }
-    });
+
+
+// Function to update button state and song name
+function updateButtonState() {
+    const songDisplay = document.getElementById('current-song');
+
+    if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        songDisplay.textContent = 'GEMINI AALIYAH - ＢＬＥＥＤ';
+    } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        songDisplay.textContent = 'Not listening to anything right now';
+    }
+}
+
 
     // Debug message
     console.log('Audio player initialized and ready.');

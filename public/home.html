@@ -6,7 +6,11 @@
   <title>cyb3r17.space</title>
   <link rel="stylesheet" href="home.css" />
 </head>
+
 <body>
+  
+  <button id="toggle-theme" class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+  
   <div class="music-controls">
     <button id="music-toggle" class="music-btn" aria-label="Toggle music">
       <span class="play-icon">⚪</span>
@@ -53,7 +57,7 @@
         <div class="status">
           <h2>Status</h2>
           <p>🟢 I’m currently Online</p>
-          <p>🎵 Listening:<br/><em>Not listening to anything right now</em></p>
+          <p>🎵 Listening:<br/><em id="current-song">Not listening to anything right now</em></p>
         </div>
 
         <div class="nav">
@@ -89,6 +93,38 @@
       <p>&copy; 2025 Kareem.space</p>
     </footer>
   </div>
+  
+  <!-- Audio element for background music -->
+  <audio id="bg-music" loop>
+    <source src="GEMINI AALIYAH - ＢＬＥＥＤ(720P_HD).mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
   <script src="script.js"></script>
+  <script>
+
+    
+    const toggleBtn = document.getElementById('toggle-theme');
+    const prefersDark = localStorage.getItem('theme') === 'dark';
+
+    if (prefersDark) {
+      document.body.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+      <div class="counter-container">
+        <h1>Key Press Counter</h1>
+        <div>Press any key to count:</div>
+        <div id="counter">0</div>
+      </div>
+      <script src="keyCounter.js"></script>
+      
+    </div>
 </body>
 </html>
