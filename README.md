@@ -1,9 +1,5 @@
 # Kareem.space | Personal Portfolio & Digital Space
 
-![Kareem.space Preview](screenshots/home-dark.png)  
-*Live Demo: [https://myprofile-v1.netlify.app/]*
-
-
 ---
 
 ## 🚀 Overview
